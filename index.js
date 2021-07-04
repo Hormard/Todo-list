@@ -8,7 +8,7 @@ $('#add-todo').addEventListener('click', function() {
     initLocalStorage()
     createCard($('#input').value)
     setLocalStorage($('#input').value)
-    getCardsLimit(DB, 6)
+    setCardsLimit(DB, 6)
     clearInput($('#input'))
     initCardListeners($('#todo-list'))
     render()
@@ -91,7 +91,7 @@ function toggle(el, action){
     el.classList.toggle(action)
 }
 
-function getCardsLimit(data, limit){
+function setCardsLimit(data, limit){
     if(data.length > limit){
         data.pop()
         updateLocalStorage()
